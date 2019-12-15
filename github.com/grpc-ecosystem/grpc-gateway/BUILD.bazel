@@ -2,9 +2,7 @@ load("//:plugin.bzl", "proto_plugin")
 
 proto_plugin(
     name = "grpc_gateway_plugin",
-    outputs = [
-        "{protopath}.pb.gw.go",
-    ],
+    output_directory = True,  # Plugin outputs cannot be predicted as they depend on service/package name
     # Show options:
     # $ bazel run @grpc_ecosystem_grpc_gateway//protoc-gen-grpc-gateway -- --help
     # options = [
@@ -20,9 +18,7 @@ proto_plugin(
 
 proto_plugin(
     name = "swagger_plugin",
-    outputs = [
-        "{protopath}.swagger.json",
-    ],
+    output_directory = True,  # Plugin outputs cannot be predicted as they depend on service/package name
     # Show options:
     # $ bazel run @grpc_ecosystem_grpc_gateway//protoc-gen-grpc-swagger -- --help
     # options = [
