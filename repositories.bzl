@@ -407,9 +407,9 @@ def rules_proto_grpc_repos(**kwargs):
     )
 
     rules_python(**kwargs)
+    bazel_skylib(**kwargs)
     build_bazel_rules_swift(**kwargs)
     build_bazel_apple_support(**kwargs)
-    bazel_skylib(**kwargs)
 
     six(**kwargs)
     com_google_protobuf(**kwargs)
